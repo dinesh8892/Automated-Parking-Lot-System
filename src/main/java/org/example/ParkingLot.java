@@ -23,6 +23,26 @@ public class ParkingLot {
         this.floors.add(floor);
     }
 
+    public ParkingFloor getParkingFloor(int floorId){
+        for(ParkingFloor floor: floors){
+            if (floor.getId() == floorId){
+                return floor;
+            }
+        }
+        return null;
+    }
+
+    public void displayStatus(){
+        this.floors.forEach(floor -> {
+            System.out.println("Parking status at Floor : " + floor.getId());
+            floor.getSpots().forEach(parkingSpot -> {
+                System.out.println(parkingSpot.getSpotId() + " "
+                        + parkingSpot.getSpotType() + " " +
+                        parkingSpot.isOccupied());
+            });
+        });
+    }
+
 
 
 }

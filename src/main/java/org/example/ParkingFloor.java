@@ -25,6 +25,15 @@ public class ParkingFloor {
         return spots;
     }
 
+    public ParkingSpot getSpot(String spotId){
+        for (ParkingSpot spot : this.spots) {
+            if (spot.getSpotId().equalsIgnoreCase(spotId)) {
+                return spot;
+            }
+        }
+        return null;
+    }
+
     public void addSpot(ParkingSpot spot){
         spots.add(spot);
     }
